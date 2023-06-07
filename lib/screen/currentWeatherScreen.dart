@@ -24,14 +24,14 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
     final data = await getWeatherData();
 
     setState(() {
-      city = data!.currentWeather!.city;
-      temperature = data!.currentWeather!.temperature;
-      state = data!.currentWeather!.state;
-      now = data!.currentWeather!.now;
+      city = data.currentWeather!.city;
+      temperature = data.currentWeather!.temperature;
+      state = data.currentWeather!.state;
+      now = data.currentWeather!.now;
       List<CurrentWeatherTitle> weatherTitleList = [
         CurrentWeatherTitle(
           title: 'Sunup',
-          data: '${(data!.currentWeather!.sunup.hour != 12 ? data!.currentWeather!.sunup.hour % 12 : data!.currentWeather!.sunup.hour).toString().padLeft(2, '0')}:${data!.currentWeather!.sunup.minute.toString().padLeft(2, '0')}',
+          data: '${(data.currentWeather!.sunup.hour != 12 ? data.currentWeather!.sunup.hour % 12 : data.currentWeather!.sunup.hour).toString().padLeft(2, '0')}:${data.currentWeather!.sunup.minute.toString().padLeft(2, '0')}',
           unit: 'a.m.',
           icon: const BoxedIcon(
             WeatherIcons.sunrise,
@@ -41,7 +41,7 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
         ),
         CurrentWeatherTitle(
           title: 'Sundown',
-          data: '${(data!.currentWeather!.sundown.hour != 12 ? data!.currentWeather!.sundown.hour % 12 : data!.currentWeather!.sundown.hour).toString().padLeft(2, '0')}:${data!.currentWeather!.sundown.minute.toString().padLeft(2, '0')}',
+          data: '${(data.currentWeather!.sundown.hour != 12 ? data.currentWeather!.sundown.hour % 12 : data.currentWeather!.sundown.hour).toString().padLeft(2, '0')}:${data.currentWeather!.sundown.minute.toString().padLeft(2, '0')}',
           unit: 'p.m.',
           icon: const BoxedIcon(
             WeatherIcons.sunset,
@@ -51,7 +51,7 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
         ),
         CurrentWeatherTitle(
           title: 'Wind Chill',
-          data: '${data!.currentWeather!.windChill}',
+          data: '${data.currentWeather!.windChill}',
           unit: '°C',
           icon: const BoxedIcon(
             WeatherIcons.thermometer_exterior,
@@ -61,7 +61,7 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
         ),
         CurrentWeatherTitle(
           title: 'Visibility',
-          data: data!.currentWeather!.visibility < 1000 ? '${data!.currentWeather!.visibility}m' : '${data!.currentWeather!.visibility % 1000 == 0 ? (data!.currentWeather!.visibility / 1000).round() : data!.currentWeather!.visibility / 1000}',
+          data: data.currentWeather!.visibility < 1000 ? '${data.currentWeather!.visibility}m' : '${data.currentWeather!.visibility % 1000 == 0 ? (data.currentWeather!.visibility / 1000).round() : data.currentWeather!.visibility / 1000}',
           unit: 'km',
           icon: const BoxedIcon(
             WeatherIcons.day_fog,
@@ -71,7 +71,7 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
         ),
         CurrentWeatherTitle(
           title: 'Clouds',
-          data: '${data!.currentWeather!.clouds}',
+          data: '${data.currentWeather!.clouds}',
           unit: '%',
           icon: const BoxedIcon(
             WeatherIcons.cloud,
@@ -81,7 +81,7 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
         ),
         CurrentWeatherTitle(
           title: 'Humidity',
-          data: '${data!.currentWeather!.humidity}',
+          data: '${data.currentWeather!.humidity}',
           unit: '%',
           icon: const BoxedIcon(
             WeatherIcons.raindrop,
@@ -91,7 +91,7 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
         ),
         CurrentWeatherTitle(
           title: 'Pressure',
-          data: '${data!.currentWeather!.pressure}',
+          data: '${data.currentWeather!.pressure}',
           unit: 'hPa',
           icon: const BoxedIcon(
             WeatherIcons.barometer,
@@ -101,7 +101,7 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
         ),
         CurrentWeatherTitle(
           title: 'Wind Speed',
-          data: '${data!.currentWeather!.windSpeed}',
+          data: '${data.currentWeather!.windSpeed}',
           unit: 'm/s',
           icon: const BoxedIcon(
             WeatherIcons.strong_wind,
@@ -131,13 +131,13 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
           final data = snapshot.data;
 
           city = data!.currentWeather!.city;
-          temperature = data!.currentWeather!.temperature;
-          state = data!.currentWeather!.state;
-          now = data!.currentWeather!.now;
+          temperature = data.currentWeather!.temperature;
+          state = data.currentWeather!.state;
+          now = data.currentWeather!.now;
           List<CurrentWeatherTitle> weatherTitleList = [
             CurrentWeatherTitle(
               title: 'Sunup',
-              data: '${(data!.currentWeather!.sunup.hour != 12 ? data!.currentWeather!.sunup.hour % 12 : data!.currentWeather!.sunup.hour).toString().padLeft(2, '0')}:${data!.currentWeather!.sunup.minute.toString().padLeft(2, '0')}',
+              data: '${(data.currentWeather!.sunup.hour != 12 ? data.currentWeather!.sunup.hour % 12 : data.currentWeather!.sunup.hour).toString().padLeft(2, '0')}:${data.currentWeather!.sunup.minute.toString().padLeft(2, '0')}',
               unit: 'a.m.',
               icon: const BoxedIcon(
                 WeatherIcons.sunrise,
@@ -147,7 +147,7 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
             ),
             CurrentWeatherTitle(
               title: 'Sundown',
-              data: '${(data!.currentWeather!.sundown.hour != 12 ? data!.currentWeather!.sundown.hour % 12 : data!.currentWeather!.sundown.hour).toString().padLeft(2, '0')}:${data!.currentWeather!.sundown.minute.toString().padLeft(2, '0')}',
+              data: '${(data.currentWeather!.sundown.hour != 12 ? data.currentWeather!.sundown.hour % 12 : data.currentWeather!.sundown.hour).toString().padLeft(2, '0')}:${data.currentWeather!.sundown.minute.toString().padLeft(2, '0')}',
               unit: 'p.m.',
               icon: const BoxedIcon(
                 WeatherIcons.sunset,
@@ -157,7 +157,7 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
             ),
             CurrentWeatherTitle(
               title: 'Wind Chill',
-              data: '${data!.currentWeather!.windChill}',
+              data: '${data.currentWeather!.windChill}',
               unit: '°C',
               icon: const BoxedIcon(
                 WeatherIcons.thermometer_exterior,
@@ -167,7 +167,7 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
             ),
             CurrentWeatherTitle(
               title: 'Visibility',
-              data: data!.currentWeather!.visibility < 1000 ? '${data!.currentWeather!.visibility}m' : '${data!.currentWeather!.visibility % 1000 == 0 ? (data!.currentWeather!.visibility / 1000).round() : data!.currentWeather!.visibility / 1000}',
+              data: data.currentWeather!.visibility < 1000 ? '${data.currentWeather!.visibility}m' : '${data.currentWeather!.visibility % 1000 == 0 ? (data.currentWeather!.visibility / 1000).round() : data.currentWeather!.visibility / 1000}',
               unit: 'km',
               icon: const BoxedIcon(
                 WeatherIcons.day_fog,
@@ -177,7 +177,7 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
             ),
             CurrentWeatherTitle(
               title: 'Clouds',
-              data: '${data!.currentWeather!.clouds}',
+              data: '${data.currentWeather!.clouds}',
               unit: '%',
               icon: const BoxedIcon(
                 WeatherIcons.cloud,
@@ -187,7 +187,7 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
             ),
             CurrentWeatherTitle(
               title: 'Humidity',
-              data: '${data!.currentWeather!.humidity}',
+              data: '${data.currentWeather!.humidity}',
               unit: '%',
               icon: const BoxedIcon(
                 WeatherIcons.raindrop,
@@ -197,7 +197,7 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
             ),
             CurrentWeatherTitle(
               title: 'Pressure',
-              data: '${data!.currentWeather!.pressure}',
+              data: '${data.currentWeather!.pressure}',
               unit: 'hPa',
               icon: const BoxedIcon(
                 WeatherIcons.barometer,
@@ -207,7 +207,7 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
             ),
             CurrentWeatherTitle(
               title: 'Wind Speed',
-              data: '${data!.currentWeather!.windSpeed}',
+              data: '${data.currentWeather!.windSpeed}',
               unit: 'm/s',
               icon: const BoxedIcon(
                 WeatherIcons.strong_wind,
@@ -238,7 +238,7 @@ class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
                     now: now!,
                   ),
                   CurrentWeatherComponent(
-                    weatherTitleList: weatherTitleList!,
+                    weatherTitleList: weatherTitleList,
                   ),
                   const SliverGap(50),
                 ],
