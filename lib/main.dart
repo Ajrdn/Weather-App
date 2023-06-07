@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/screen/weatherScreen.dart';
+import 'package:weather_app/screen/screenNavigation.dart';
 
 void main() {
   runApp(
     const MaterialApp(
-      home: WeatherScreen(),
+      home: ScreenNavigation(),
       debugShowCheckedModeBanner: false,
     )
   );

@@ -250,15 +250,15 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   CurrentWeatherComponent(
                     weatherTitleList: weatherTitleList!,
                   ),
-                  const SliverGap(70),
-                  HourlyWeatherComponent(
-                    hourlyWeatherList: hourlyWeatherList!,
-                  ),
-                  const SliverGap(70),
-                  DailyWeatherComponent(
-                    dailyWeatherList: dailyWeatherList!,
-                  ),
-                  const SliverGap(30),
+                  const SliverGap(90),
+                  // HourlyWeatherComponent(
+                  //   hourlyWeatherList: hourlyWeatherList!,
+                  // ),
+                  // const SliverGap(70),
+                  // DailyWeatherComponent(
+                  //   dailyWeatherList: dailyWeatherList!,
+                  // ),
+                  // const SliverGap(30),
                 ],
               ),
             ),
