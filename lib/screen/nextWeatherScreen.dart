@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/components/currentWeatherComponent.dart';
 import 'package:weather_app/components/hourlyWeatherComponent.dart';
 import 'package:weather_app/components/dailyWeatherComponent.dart';
 import 'package:weather_app/components/weatherAppBarComponent.dart';
-import 'package:weather_app/models/currentWeatherTitle.dart';
 import 'package:weather_app/models/dailyWeather.dart';
 import 'package:weather_app/models/hourlyWeather.dart';
 import 'package:weather_app/utils/data_utils.dart';
-import 'package:weather_icons/weather_icons.dart';
 import 'package:gap/gap.dart';
 
 class NextWeatherScreen extends StatefulWidget {
