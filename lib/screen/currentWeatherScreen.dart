@@ -1,30 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/components/currentWeatherComponent.dart';
-import 'package:weather_app/components/hourlyWeatherComponent.dart';
-import 'package:weather_app/components/dailyWeatherComponent.dart';
 import 'package:weather_app/components/weatherAppBarComponent.dart';
 import 'package:weather_app/models/currentWeatherTitle.dart';
-import 'package:weather_app/models/dailyWeather.dart';
-import 'package:weather_app/models/hourlyWeather.dart';
 import 'package:weather_app/utils/data_utils.dart';
 import 'package:weather_icons/weather_icons.dart';
 import 'package:gap/gap.dart';
 
-class WeatherScreen extends StatefulWidget {
-  const WeatherScreen({Key? key}) : super(key: key);
+class CurrentWeatherScreen extends StatefulWidget {
+  const CurrentWeatherScreen({Key? key}) : super(key: key);
 
   @override
-  State<WeatherScreen> createState() => _WeatherScreenState();
+  State<CurrentWeatherScreen> createState() => _CurrentWeatherScreenState();
 }
 
-class _WeatherScreenState extends State<WeatherScreen> {
+class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
   String? city;
   int? temperature;
   String? state;
   DateTime? now;
   List<CurrentWeatherTitle>? weatherTitleList;
-  List<HourlyWeather>? hourlyWeatherList;
-  List<DailyWeather>? dailyWeatherList;
 
   Future<void> refreshWeatherData() async {
     final data = await getWeatherData();
@@ -116,8 +110,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
           ),
         ),
       ];
-      hourlyWeatherList = data!.hourlyWeatherList;
-      dailyWeatherList = data!.dailyWeatherList;
     });
   }
 
@@ -224,8 +216,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
               ),
             ),
           ];
-          hourlyWeatherList = data!.hourlyWeatherList;
-          dailyWeatherList = data!.dailyWeatherList;
 
           return Container(
             padding: const EdgeInsets.symmetric(
@@ -250,15 +240,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   CurrentWeatherComponent(
                     weatherTitleList: weatherTitleList!,
                   ),
-                  const SliverGap(90),
-                  // HourlyWeatherComponent(
-                  //   hourlyWeatherList: hourlyWeatherList!,
-                  // ),
-                  // const SliverGap(70),
-                  // DailyWeatherComponent(
-                  //   dailyWeatherList: dailyWeatherList!,
-                  // ),
-                  // const SliverGap(30),
+                  const SliverGap(50),
                 ],
               ),
             ),
