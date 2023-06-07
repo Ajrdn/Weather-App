@@ -29,12 +29,12 @@ class _NextWeatherScreenState extends State<NextWeatherScreen> {
     final data = await getWeatherData();
 
     setState(() {
-      city = data!.currentWeather!.city;
-      temperature = data!.currentWeather!.temperature;
-      state = data!.currentWeather!.state;
-      now = data!.currentWeather!.now;
-      hourlyWeatherList = data!.hourlyWeatherList;
-      dailyWeatherList = data!.dailyWeatherList;
+      city = data.currentWeather!.city;
+      temperature = data.currentWeather!.temperature;
+      state = data.currentWeather!.state;
+      now = data.currentWeather!.now;
+      hourlyWeatherList = data.hourlyWeatherList;
+      dailyWeatherList = data.dailyWeatherList;
     });
   }
 
@@ -56,11 +56,11 @@ class _NextWeatherScreenState extends State<NextWeatherScreen> {
           final data = snapshot.data;
 
           city = data!.currentWeather!.city;
-          temperature = data!.currentWeather!.temperature;
-          state = data!.currentWeather!.state;
-          now = data!.currentWeather!.now;
-          hourlyWeatherList = data!.hourlyWeatherList;
-          dailyWeatherList = data!.dailyWeatherList;
+          temperature = data.currentWeather!.temperature;
+          state = data.currentWeather!.state;
+          now = data.currentWeather!.now;
+          hourlyWeatherList = data.hourlyWeatherList;
+          dailyWeatherList = data.dailyWeatherList;
 
           return Container(
             padding: const EdgeInsets.symmetric(
